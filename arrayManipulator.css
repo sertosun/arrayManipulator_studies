@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  text-align: center;
+}
+
+h1,
+p {
+  margin-bottom: 1.2rem;
+}
+
+input,
+button {
+  display: block;
+  padding: 0.8rem 2.4rem;
+  margin-bottom: 1rem;
+  width: 300px;
+}
+
+.input_container {
+  display: grid;
+  place-items: center;
+}
+
+button {
+  background-color: brown;
+  color: white;
+  border: none;
+}
+
+button:hover {
+  background-color: rgb(0, 162, 255);
+  cursor: pointer;
+}

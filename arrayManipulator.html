@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Manipulator</title>
+    <link rel="stylesheet" href="arrayManipulator.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Willkommen zum arrayManipulator</h1>
+      <p id="arrayHeading">Hier wird deine Manipulation angezeigt</p>
+      <p id="arrayText">innerHTML</p>
+
+      <div class="input_container">
+        <input
+          type="text"
+          name="arrayFunction"
+          id="arrayFunction"
+          placeholder="Array Funktion eintragen"
+        />
+        <input type="number" id="arrayValue" placeholder="Wert eintragen" />
+        <button id="sendFunction">Array manipulieren</button>
+      </div>
+    </div>
+    <script>
+      const numbers = [
+        434, 56, 34, 6, 67, 4, 2, 256, 12, 43, 23, 4, 546, 123, 54,
+      ];
+
+      console.log(numbers);
+
+      function arrayPop() {
+        var deleteMethod = numbers.pop();
+        console.log(deleteMethod + " wurde aus dem array entfernt");
+      }
+
+      function arrayPush(element) {
+        element = document.getElementById("arrayValue").value;
+        element = parseInt(element); // element wird zu einem Number(Integer) transformiert
+        numbers.push(element);
+        console.log("Der Wert " + element + " wurde hinzugefügt");
+        console.log(numbers);
+      }
+
+      document.getElementById("sendFunction").onclick = function () {
+        var x, text;
+
+        x = document.getElementById("arrayFunction").value;
+        text = document.getElementById("arrayText").innerHTML =
+          "Dein Array " + numbers;
+
+        if (x == "pop") {
+          arrayPop();
+          text = document.getElementById("arrayText").innerHTML =
+            "Dein Array " + numbers;
+        } else if (x == "push") {
+          arrayPush();
+          text = document.getElementById("arrayText").innerHTML =
+            "Dein Array " + numbers;
+        } else {
+          document.write("Der Wert ist falsch");
+        }
+      };
+    </script>
+  </body>
+</html>
